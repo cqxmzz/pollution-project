@@ -1,0 +1,7 @@
+optimization finished, #iter = 773
+nu = 0.1163274016453508
+obj = -859.7432307125601, rho = 3.2150573421454696
+nSV = 1351, nBSV = 1309
+Total nSV = 1351
+Accuracy = 98.64847303443794% (7591/7695) (classification)
+SVM Classification is done! The accuracy is 0.9864847303443794
