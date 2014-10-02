@@ -13,14 +13,15 @@ public class GetVectors {
 	public static void main(String[] args) throws IOException {
 		String outFilePath = "vector.dat";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(outFilePath));
-	    String pathMal = "F:/data/malware/";
+	    String pathMal = "/Users/chenqiming/Desktop/m/";
 	    File fileMal = new File(pathMal);
 	    File flistMal[] = fileMal.listFiles();
-	    String pathCln = "F:/data/clean/";
+	    String pathCln = "/Users/chenqiming/Desktop/c/";
 	    File fileCln = new File(pathCln);
 	    File flistCln[] = fileCln.listFiles();
 	    for (File file : flistMal)
 	    {
+	    	System.out.println(file.getName());
 			PDF pdf = new PDF(file);
 			ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
 			if (vector.size() > 0)
@@ -37,6 +38,7 @@ public class GetVectors {
 	    }
 	    for (File file : flistCln)
 	    {
+	    	System.out.println(file.getName());
 			PDF pdf = new PDF(file);
 			ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
 			if (vector.size() > 0)

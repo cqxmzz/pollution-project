@@ -71,10 +71,10 @@ public class PDFPaths
 	public static HashMap<String, Integer> getAllPathsCount()
 	{
 		HashMap<String, Integer> ret = new HashMap<String, Integer>();
-		String pathMal = "/Users/chenqiming/Desktop/paths/malware/";
+		String pathMal = "/Users/chenqiming/Desktop/m/";
 		File fileMal = new File(pathMal);
 		File flistMal[] = fileMal.listFiles();
-		String pathCln = "/Users/chenqiming/Desktop/paths/clean/";
+		String pathCln = "/Users/chenqiming/Desktop/c/";
 		File fileCln = new File(pathCln);
 		File flistCln[] = fileCln.listFiles();
 		for (File file : flistCln)
@@ -86,6 +86,8 @@ public class PDFPaths
 				while ((line = br.readLine()) != null)
 				{
 					int sep = line.lastIndexOf(':');
+					if (sep < 0)
+						continue;
 					String path = line.substring(0, sep);
 					String countString = line.substring(sep + 1);
 					int count = Integer.parseInt(countString);
@@ -131,12 +133,12 @@ public class PDFPaths
 
 	public static void storePaths()
 	{
-		String pathMal1 = "/Users/chenqiming/Desktop/malware_10982/";
+		String pathMal1 = "/Users/chenqiming/Desktop/intelligencefiles/20141002T021020";
 		File fileMal1 = new File(pathMal1);
 		File flistMal1[] = fileMal1.listFiles();
 		for (File file : flistMal1)
 		{
-			File pathsFile = new File(file.getAbsolutePath() + ".txt");
+			File pathsFile = new File("/Users/chenqiming/Desktop/c/" + file.getName() + ".txt");
 			try
 			{
 				if (!pathsFile.createNewFile()) throw new Exception("new file failed");
