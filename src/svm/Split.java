@@ -17,20 +17,58 @@ public class Split {
 		BufferedWriter bw_train = new BufferedWriter(new FileWriter(outTrainPath));
 		BufferedWriter bw_test = new BufferedWriter(new FileWriter(outTestPath));
 
-        Random random=new Random(10000);
+		boolean datacount = true;
+		
+        Random random = new Random(10000);
+        Random random1 = new Random(10000);
         int randNum = 0;
+        int randNum1 = 0;
         String string;
+        int train_one = 0;
+        int train_zero = 0;
+        int test_one = 0;
+        int test_zero = 0;
 		while ((string = br.readLine()) != null)
 		{
 			randNum = Math.abs(random.nextInt());
-			System.out.println(randNum % 10);
+			randNum1 = Math.abs(random1.nextInt());
+			if (randNum1 % 6 > 4)
+				continue;
 			if (randNum % 10 > 5)
 			{
-			    bw_test.write(string);
+				if (string.charAt(0) == '0')
+				{
+					if (train_zero >= 5000 && datacount)
+						continue;
+					else
+						train_zero++;
+				}
+				if (string.charAt(0) == '1')
+				{
+					if (train_one >= 5000 && datacount)
+						continue;
+					else
+						train_one++;
+				}
+				bw_test.write(string);
 			    bw_test.newLine();
 			}
 			else
 			{
+				if (string.charAt(0) == '0')
+				{
+					if (test_zero >= 5000 && datacount)
+						continue;
+					else
+						test_zero++;
+				}
+				if (string.charAt(0) == '1')
+				{
+					if (test_one >= 5000 && datacount)
+						continue;
+					else
+						test_one++;
+				}
 				bw_train.write(string);
 			    bw_train.newLine();
 			}

@@ -14,7 +14,7 @@ public class Test
 		 * 
 		 * to change that See pdf.PDFPaths
 		 */
-		File file = new File("/Users/chenqiming/Desktop/c/749ac90e059e432bd582e23437be1445a84c8d443b3b47a9eda6c86dfcf01914");
+		File file = new File("/Users/chenqiming/Documents/workspace/PollutionProject/test.pdf");
 		PDF pdf = new PDF(file);
 		ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
 		for (int i : vector)
