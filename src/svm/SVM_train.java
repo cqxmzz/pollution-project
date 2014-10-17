@@ -145,11 +145,11 @@ public class SVM_train {
 		param = new svm_parameter();
 		// default values
 		param.svm_type = svm_parameter.C_SVC;
-		param.kernel_type = svm_parameter.RBF;//svm_parameter.LINEAR;//
+		param.kernel_type = svm_parameter.RBF;//svm_parameter.RBF;
 		param.degree = 3;
 		param.gamma = 0.0025;	// 1/num_features
 		param.coef0 = 0;
-		param.nu = 0.5;
+		param.nu = 0.01;
 		param.cache_size = 100;
 		param.C = 12;
 		param.eps = 1e-3;
@@ -159,7 +159,7 @@ public class SVM_train {
 		param.nr_weight = 0;
 		param.weight_label = new int[0];
 		param.weight = new double[0];
-		cross_validation = 0;
+		cross_validation = 5;
 
 		// parse options
 		for(i=0;i<argv.length;i++)
@@ -287,6 +287,11 @@ public class SVM_train {
 			}
 			if(m>0) max_index = Math.max(max_index, x[m-1].index);
 			vx.addElement(x);
+			if (vy.lastElement() == 0 && false)
+			{
+				vy.remove(vy.size()-1);
+				vx.remove(vx.size()-1);
+			}
 		}
 
 		prob = new svm_problem();

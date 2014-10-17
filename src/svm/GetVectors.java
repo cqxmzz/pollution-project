@@ -16,9 +16,9 @@ public class GetVectors
 		boolean test = true;
 		if (test)
 		{
-			String testPath = "pollute.dat";
+			String testPath = "polluteold.dat";
 			BufferedWriter bwt = new BufferedWriter(new FileWriter(testPath));
-			String pathT = "/Users/chenqiming/Desktop/pollute/";
+			String pathT = "/Users/chenqiming/Desktop/pollute/pollute/";
 			File fileT = new File(pathT);
 			File flistT[] = fileT.listFiles();
 			for (File file : flistT)
@@ -41,13 +41,12 @@ public class GetVectors
 			bwt.close();
 			return;
 		}
-		
 		String outFilePath = "vector.dat";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(outFilePath));
-		String pathMal = "/Users/chenqiming/Desktop/m/";
+		String pathMal = "/Users/chenqiming/Desktop/pollute/m/";
 		File fileMal = new File(pathMal);
 		File flistMal[] = fileMal.listFiles();
-		String pathCln = "/Users/chenqiming/Desktop/c/";
+		String pathCln = "/Users/chenqiming/Desktop/pollute/c/";
 		File fileCln = new File(pathCln);
 		File flistCln[] = fileCln.listFiles();
 		for (File file : flistMal)

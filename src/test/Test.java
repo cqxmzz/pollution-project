@@ -14,11 +14,12 @@ public class Test
 		 * 
 		 * to change that See pdf.PDFPaths
 		 */
-		File file = new File("/Users/chenqiming/Documents/workspace/PollutionProject/test.pdf");
-		PDF pdf = new PDF(file);
-		ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
-		for (int i : vector)
-		System.out.print(" " + i);
-		//PDFPaths.storePopularPaths(100);
+//		File file = new File("/Users/chenqiming/Documents/workspace/PollutionProject/test.pdf");
+//		PDF pdf = new PDF(file);
+//		ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
+//		for (int i : vector)
+//		System.out.print(" " + i);
+		PDFPaths.storePaths();
+		PDFPaths.storePopularPaths(50);
 	}
 }

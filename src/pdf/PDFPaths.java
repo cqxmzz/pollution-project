@@ -74,40 +74,41 @@ public class PDFPaths
 		String pathMal = "/Users/chenqiming/Desktop/m/";
 		File fileMal = new File(pathMal);
 		File flistMal[] = fileMal.listFiles();
-		String pathCln = "/Users/chenqiming/Desktop/c/";
-		File fileCln = new File(pathCln);
-		File flistCln[] = fileCln.listFiles();
-		for (File file : flistCln)
-		{
-			try
-			{
-				BufferedReader br = new BufferedReader(new FileReader(file));
-				String line;
-				while ((line = br.readLine()) != null)
-				{
-					int sep = line.lastIndexOf(':');
-					if (sep < 0)
-						continue;
-					String path = line.substring(0, sep);
-					String countString = line.substring(sep + 1);
-					int count = Integer.parseInt(countString);
-					count = 1;
-					/*
-					 * count what?
-					 */
-					if (ret.containsKey(path))
-						ret.put(path, ret.get(path) + count);
-					else
-						ret.put(path, count);
-				}
-				br.close();
-			} catch (Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
+		//String pathCln = "/Users/chenqiming/Desktop/pollute/c/";
+		//File fileCln = new File(pathCln);
+		//File flistCln[] = fileCln.listFiles();
+//		for (File file : flistCln)
+//		{
+//			try
+//			{
+//				BufferedReader br = new BufferedReader(new FileReader(file));
+//				String line;
+//				while ((line = br.readLine()) != null)
+//				{
+//					int sep = line.lastIndexOf(':');
+//					if (sep < 0)
+//						continue;
+//					String path = line.substring(0, sep);
+//					String countString = line.substring(sep + 1);
+//					int count = Integer.parseInt(countString);
+//					count = 1;
+//					/*
+//					 * count what?
+//					 */
+//					if (ret.containsKey(path))
+//						ret.put(path, ret.get(path) + count);
+//					else
+//						ret.put(path, count);
+//				}
+//				br.close();
+//			} catch (Exception e)
+//			{
+//				e.printStackTrace();
+//			}
+//		}
 		for (File file : flistMal)
 		{
+			System.out.println("!");
 			try
 			{
 				BufferedReader br = new BufferedReader(new FileReader(file));
@@ -133,12 +134,12 @@ public class PDFPaths
 
 	public static void storePaths()
 	{
-		String pathMal1 = "/Users/chenqiming/Desktop/intelligencefiles/20141002T021020";
+		String pathMal1 = "/Users/chenqiming/Desktop/pollute/m/";
 		File fileMal1 = new File(pathMal1);
 		File flistMal1[] = fileMal1.listFiles();
 		for (File file : flistMal1)
 		{
-			File pathsFile = new File("/Users/chenqiming/Desktop/c/" + file.getName() + ".txt");
+			File pathsFile = new File("/Users/chenqiming/Desktop/m/" + file.getName() + ".txt");
 			try
 			{
 				if (!pathsFile.createNewFile()) throw new Exception("new file failed");
