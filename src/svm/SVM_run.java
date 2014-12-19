@@ -9,7 +9,7 @@ public class SVM_run {
 		String modelFile = SVM_train.main(trainArgs);
 		
 		String[] testArgs = {"test_vector.dat", "train_vector.dat.model", "result.dat", "pollute.dat"};//directory of test file, model file, result file
-		Double accuracy = SVM_predict.main(testArgs);//
+		Double accuracy = SVM_predict_polluted.main(testArgs);//_polluted
 		System.out.println("Done! Accuracy: " + accuracy);
 	}
 }

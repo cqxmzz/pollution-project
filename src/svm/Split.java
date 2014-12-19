@@ -10,9 +10,9 @@ import java.util.Random;
 public class Split {
 	public static void main(String[] arg) throws IOException
 	{
-		String inFilePath = "vectorold.dat";
-		String outTrainPath = "train_vectorold.dat";
-		String outTestPath = "test_vectorold.dat";
+		String inFilePath = "vector.dat";
+		String outTrainPath = "train_vector.dat";
+		String outTestPath = "test_vector.dat";
 		BufferedReader br = new BufferedReader(new FileReader(inFilePath));
 		BufferedWriter bw_train = new BufferedWriter(new FileWriter(outTrainPath));
 		BufferedWriter bw_test = new BufferedWriter(new FileWriter(outTestPath));

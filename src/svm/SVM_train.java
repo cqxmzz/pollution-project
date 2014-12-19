@@ -144,12 +144,12 @@ public class SVM_train {
 
 		param = new svm_parameter();
 		// default values
-		param.svm_type = svm_parameter.C_SVC;
+		param.svm_type = svm_parameter.LINEAR;
 		param.kernel_type = svm_parameter.RBF;//svm_parameter.RBF;
 		param.degree = 3;
-		param.gamma = 0.0025;	// 1/num_features
+		param.gamma = 0.025;	// 1/num_features
 		param.coef0 = 0;
-		param.nu = 0.01;
+		param.nu = 0.001;
 		param.cache_size = 100;
 		param.C = 12;
 		param.eps = 1e-3;
@@ -159,7 +159,7 @@ public class SVM_train {
 		param.nr_weight = 0;
 		param.weight_label = new int[0];
 		param.weight = new double[0];
-		cross_validation = 5;
+		cross_validation = 0;
 
 		// parse options
 		for(i=0;i<argv.length;i++)

@@ -16,7 +16,7 @@ public class GetVectors
 		boolean test = true;
 		if (test)
 		{
-			String testPath = "polluteold.dat";
+			String testPath = "pollute.dat";
 			BufferedWriter bwt = new BufferedWriter(new FileWriter(testPath));
 			String pathT = "/Users/chenqiming/Desktop/pollute/pollute/";
 			File fileT = new File(pathT);
@@ -39,7 +39,6 @@ public class GetVectors
 				}
 			}
 			bwt.close();
-			return;
 		}
 		String outFilePath = "vector.dat";
 		BufferedWriter bw = new BufferedWriter(new FileWriter(outFilePath));

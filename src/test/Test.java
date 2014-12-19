@@ -19,7 +19,8 @@ public class Test
 //		ArrayList<Integer> vector = PDFPaths.getPathsVector(pdf);
 //		for (int i : vector)
 //		System.out.print(" " + i);
-		PDFPaths.storePaths();
-		PDFPaths.storePopularPaths(50);
+		//PDFPaths.storePaths();
+		PDFPaths p = new PDFPaths();
+		p.storePopularPaths(1500);
 	}
 }
